@@ -2,96 +2,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GODX S4M1R SENSI</title>
+<title>GODX S4M1R SENSI PRO</title>
 <style>
 body {
-  background: #0f0f0f;
-  color: white;
+  background: linear-gradient(135deg,#0f0f0f,#1a1a1a);
+  color:white;
   font-family: Arial;
-  text-align: center;
+  text-align:center;
 }
-.container {
-  margin-top: 30px;
-}
-h1 {
-  font-size: 32px;
-  color: orange;
-}
-.subtitle {
-  font-size: 14px;
-  color: #ccc;
-  margin-bottom: 20px;
-}
-input, select {
-  padding: 10px;
-  margin: 8px;
-  width: 230px;
-  border-radius: 5px;
-  border: none;
-}
-button {
-  padding: 12px 20px;
-  margin: 10px;
-  border: none;
-  border-radius: 6px;
-  background: orange;
-  color: black;
-  font-weight: bold;
-}
-#result, #vipBox {
-  margin-top: 20px;
-}
-.note {
-  font-size: 12px;
-  color: #aaa;
-}
+.container { margin-top:30px; }h1 { font-size:34px; color:#ff9900; text-shadow:0 0 10px orange; }
+
+input, select { padding:12px; margin:10px; width:250px; border-radius:8px; border:none; background:#222; color:white; }
+
+button { padding:14px 25px; margin:12px; border:none; border-radius:8px; background:linear-gradient(45deg,orange,red); color:white; font-weight:bold; cursor:pointer; transition:0.3s; box-shadow:0 0 10px orange; }
+
+button:hover { transform:scale(1.08); box-shadow:0 0 20px red; }
+
+#result, #vipBox { margin-top:20px; } .note { font-size:12px; color:#aaa; }
+
+.card { background:#1e1e1e; padding:20px; margin:20px; border-radius:15px; box-shadow:0 0 15px rgba(255,165,0,0.3); }
+
 </style>
 </head>
-<body><h1>🔥 WELCOME TO 1NONLYS4M1R SENSI 🔥</h1>
-<p class="subtitle">Enter details to get your custom sensi</p><div class="container"><!-- 1. SELECT DEVICE --><select id="device">
-  <option>SELECT DEVICE</option>
+<body><h1>🔥 GODX S4M1R SENSI PRO 🔥</h1><div class="container card"><select id="device">
   <option>VIVO</option>
   <option>SAMSUNG</option>
-</select><br><!-- 2. RAM / ROM --><input id="ram" placeholder="RAM / ROM (4GB / 64GB)"><br>
-
-<!-- 3. APK --><input id="apk" placeholder="APK (FreeFireMAX)"><br>
-
-<!-- 4. PERFORMANCE --><select id="perf">
+</select><br><select id="perf">
   <option>HIGH</option>
   <option>NORMAL</option>
   <option>LOW</option>
-</select><br><!-- 5. CODE --><input id="code" placeholder="Enter Code"><br>
+</select><br><input id="code" placeholder="Enter Code"><br>
 
-<p class="note">How to get code? Get code from Instagram Reel</p>
-<p class="note">IG: 1nonlys4m1r</p><button onclick="getSensi()">GET SENSI</button> <button onclick="showVIP()">👑 VIP ₹199</button>
+<p class="note">Get code from Instagram Reel</p>
+<p class="note">IG: 1nonlys4m1r</p><button onclick="getSensi()">⚡ GET SENSI</button> <button onclick="showVIP()">👑 VIP ₹199</button>
 
-<div id="result"></div><div id="vipBox" style="display:none;">
-  <h2>Pay ₹199 to Unlock VIP</h2>
-  <img src="qr.png" width="220"><br>
-  <p>Send payment screenshot on Instagram</p>
-  <b>IG: 1nonlys4m1r</b>
-</div></div><script>
+<div id="result"></div></div><div id="vipBox" class="card" style="display:none;">
+  <h2>💰 Pay ₹199</h2>
+  <img src="qr.png" width="220"><br><br>
+  <p>After payment send screenshot to IG</p>
+  <b>1nonlys4m1r</b><br><br><input id="vipcode" placeholder="Enter VIP Code"><br> <button onclick="unlockVIP()">🔓 UNLOCK VIP</button>
+
+  <div id="vipResult"></div>
+</div><script>
 function getSensi(){
   let code = document.getElementById("code").value;
+  let device = document.getElementById("device").value;
+  let perf = document.getElementById("perf").value;
 
-  if(code === "1NONLYS4M1R"){
-    document.getElementById("result").innerHTML = 
-    "🔥 GODX S4M1R PRO SENSI 🔥<br>" +
-    "General: ___<br>" +
-    "Red Dot: ___<br>" +
-    "2x Scope: ___<br>" +
-    "4x Scope: ___<br>" +
-    "AWM Scope: ___<br>" +
-    "Free Look: ___<br><br>" +
-    "Sensi by: IG: 1nonlys4m1r & ChatGPT";
-  } else {
-    document.getElementById("result").innerHTML = 
-    "❌ Invalid Code - Get code from IG: 1nonlys4m1r";
+  if(code !== "1NONLYS4M1R"){
+    document.getElementById("result").innerHTML = "❌ Invalid Code";
+    return;
   }
+
+  let sensi="";
+
+  if(device==="SAMSUNG" && perf==="HIGH"){
+    sensi="DPI:540<br>General:198<br>Red Dot:2<br>2x:188<br>4x:190<br>AWM:199<br>Free Look:200";
+  } else if(device==="SAMSUNG" && perf==="LOW"){
+    sensi="DPI:580<br>General:199<br>Red Dot:0<br>2x:166<br>4x:197<br>AWM:178<br>Free Look:188";
+  } else if(device==="SAMSUNG" && perf==="NORMAL"){
+    sensi="DPI:560<br>General:177<br>Red Dot:22<br>2x:179<br>4x:154<br>AWM:190<br>Free Look:200";
+  } else if(device==="VIVO" && perf==="HIGH"){
+    sensi="DPI:500<br>General:176<br>Red Dot:31<br>2x:176<br>4x:188<br>AWM:159<br>Free Look:200";
+  } else if(device==="VIVO" && perf==="LOW"){
+    sensi="DPI:550<br>General:199<br>Red Dot:23<br>2x:190<br>4x:180<br>AWM:160<br>Free Look:200";
+  } else {
+    sensi="DPI:570<br>General:189<br>Red Dot:47<br>2x:179<br>4x:181<br>AWM:177<br>Free Look:200";
+  }
+
+  document.getElementById("result").innerHTML =
+  "🔥 PRO SENSI 🔥<br><br>" + sensi +
+  "<br><br>Sensi by: IG: 1nonlys4m1r & ChatGPT";
 }
 
 function showVIP(){
-  document.getElementById("vipBox").style.display = "block";
+  document.getElementById("vipBox").style.display="block";
+}
+
+function unlockVIP(){
+  let vipcode = document.getElementById("vipcode").value;
+
+  if(vipcode === "VIP-S4M1R"){
+    document.getElementById("vipResult").innerHTML =
+    "👑 VIP SENSI 👑<br><br>General:199<br>Red Dot:62<br>2x:170<br>4x:188<br>AWM:150<br>Free Look:199<br><br>Sensi by: IG: 1nonlys4m1r & ChatGPT";
+  } else {
+    document.getElementById("vipResult").innerHTML = "❌ Invalid VIP Code";
+  }
 }
 </script></body>
 </html>
