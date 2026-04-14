@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GODX S4M1R SENSI</title>
+<style>
+body {
+  background: #0f0f0f;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+.container {
+  margin-top: 30px;
+}
+h1 {
+  font-size: 32px;
+  color: orange;
+}
+.subtitle {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+input, select {
+  padding: 10px;
+  margin: 8px;
+  width: 230px;
+  border-radius: 5px;
+  border: none;
+}
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+  background: orange;
+  color: black;
+  font-weight: bold;
+}
+#result, #vipBox {
+  margin-top: 20px;
+}
+.note {
+  font-size: 12px;
+  color: #aaa;
+}
+</style>
+</head>
+<body><h1>🔥 WELCOME TO 1NONLYS4M1R SENSI 🔥</h1>
+<p class="subtitle">Enter details to get your custom sensi</p><div class="container"><!-- 1. SELECT DEVICE --><select id="device">
+  <option>SELECT DEVICE</option>
+  <option>VIVO</option>
+  <option>SAMSUNG</option>
+</select><br><!-- 2. RAM / ROM --><input id="ram" placeholder="RAM / ROM (4GB / 64GB)"><br>
+
+<!-- 3. APK --><input id="apk" placeholder="APK (FreeFireMAX)"><br>
+
+<!-- 4. PERFORMANCE --><select id="perf">
+  <option>HIGH</option>
+  <option>NORMAL</option>
+  <option>LOW</option>
+</select><br><!-- 5. CODE --><input id="code" placeholder="Enter Code"><br>
+
+<p class="note">How to get code? Get code from Instagram Reel</p>
+<p class="note">IG: 1nonlys4m1r</p><button onclick="getSensi()">GET SENSI</button> <button onclick="showVIP()">👑 VIP ₹199</button>
+
+<div id="result"></div><div id="vipBox" style="display:none;">
+  <h2>Pay ₹199 to Unlock VIP</h2>
+  <img src="qr.png" width="220"><br>
+  <p>Send payment screenshot on Instagram</p>
+  <b>IG: 1nonlys4m1r</b>
+</div></div><script>
+function getSensi(){
+  let code = document.getElementById("code").value;
+
+  if(code === "1NONLYS4M1R"){
+    document.getElementById("result").innerHTML = 
+    "🔥 GODX S4M1R PRO SENSI 🔥<br>" +
+    "General: ___<br>" +
+    "Red Dot: ___<br>" +
+    "2x Scope: ___<br>" +
+    "4x Scope: ___<br>" +
+    "AWM Scope: ___<br>" +
+    "Free Look: ___<br><br>" +
+    "Sensi by: IG: 1nonlys4m1r & ChatGPT";
+  } else {
+    document.getElementById("result").innerHTML = 
+    "❌ Invalid Code - Get code from IG: 1nonlys4m1r";
+  }
+}
+
+function showVIP(){
+  document.getElementById("vipBox").style.display = "block";
+}
+</script></body>
+</html>
