@@ -27,6 +27,7 @@ button:hover { transform:scale(1.08); box-shadow:0 0 20px red; }
 <body><h1>🔥 GODX S4M1R SENSI PRO 🔥</h1><div class="container card"><select id="device">
   <option>VIVO</option>
   <option>SAMSUNG</option>
+  <option>REALME</option>
 </select><br><select id="perf">
   <option>HIGH</option>
   <option>NORMAL</option>
@@ -49,7 +50,7 @@ function getSensi(){
   let device = document.getElementById("device").value;
   let perf = document.getElementById("perf").value;
 
-  if(code !== "1NONLYS4M1R"){
+  if(code !== "TGCAREFATHER"){
     document.getElementById("result").innerHTML = "❌ Invalid Code";
     return;
   }
@@ -66,8 +67,14 @@ function getSensi(){
     sensi="DPI:500<br>General:176<br>Red Dot:31<br>2x:176<br>4x:188<br>AWM:159<br>Free Look:200";
   } else if(device==="VIVO" && perf==="LOW"){
     sensi="DPI:550<br>General:199<br>Red Dot:23<br>2x:190<br>4x:180<br>AWM:160<br>Free Look:200";
+  } else if(device==="REALME" && perf==="HIGH"){
+    sensi="DPI:650<br>General:178<br>Red Dot:160<br>2x:176<br>4x:188<br>AWM:159<br>Free Look:200";
+  } else if(device==="REALME" && perf==="LOW"){
+    sensi="DPI:550<br>General:190<br>Red Dot:123<br>2x:190<br>4x:180<br>AWM:160<br>Free Look:200";
+  } else if(device==="REALME" && perf==="NORMAL"){
+    sensi="DPI:570<br>General:180<br>Red Dot:147<br>2x:179<br>4x:181<br>AWM:177<br>Free Look:200";
   } else {
-    sensi="DPI:570<br>General:189<br>Red Dot:47<br>2x:179<br>4x:181<br>AWM:177<br>Free Look:200";
+    sensi="DPI:570<br>General:189<br>Red Dot:47<br>2x:179<br>4x:181<br>AWM:177<br>Free Look:200";<br>General:189<br>Red Dot:47<br>2x:179<br>4x:181<br>AWM:177<br>Free Look:200";
   }
 
   document.getElementById("result").innerHTML =
